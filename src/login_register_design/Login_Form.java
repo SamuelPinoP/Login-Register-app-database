@@ -38,7 +38,7 @@ public class Login_Form extends javax.swing.JFrame {
         
         //Create a yellow border for the jpanel_title
         //0 border in the top
-        Border jpanel_title_border = BorderFactory.createMatteBorder(0, 1, 1, 1, Color.yellow);
+        Border jpanel_title_border = BorderFactory.createMatteBorder(0, 1, 1, 1, Color.black);
         //set the border to the jPanel_title
         jPanel_title.setBorder(jpanel_title_border);
         
@@ -94,7 +94,7 @@ public class Login_Form extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 0));
+        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
 
         jPanel2.setBackground(new java.awt.Color(153, 153, 153));
 
@@ -158,8 +158,8 @@ public class Login_Form extends javax.swing.JFrame {
         });
 
         jLabel_Create_Account.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel_Create_Account.setForeground(new java.awt.Color(255, 51, 51));
-        jLabel_Create_Account.setText(">> No Account? Create One!");
+        jLabel_Create_Account.setForeground(new java.awt.Color(102, 102, 0));
+        jLabel_Create_Account.setText("Register an Account !");
         jLabel_Create_Account.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel_Create_Account.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -529,7 +529,7 @@ public class Login_Form extends javax.swing.JFrame {
 
     private void jLabel_Create_AccountMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_Create_AccountMouseEntered
         
-        Border label_border = BorderFactory.createMatteBorder(0, 0, 1, 0, Color.red);
+        Border label_border = BorderFactory.createMatteBorder(0, 0, 1, 0, Color.black);
         jLabel_Create_Account.setBorder(label_border);
         
     }//GEN-LAST:event_jLabel_Create_AccountMouseEntered

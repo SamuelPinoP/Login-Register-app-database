@@ -38,12 +38,18 @@ public class Register_Form extends javax.swing.JFrame {
     public Register_Form() {
         initComponents();
         
+        jPasswordField_1.setText("");
+        jPasswordField_1.setForeground(Color.GRAY);  // Placeholder color
+        
+        jPasswordField_2.setText("");
+        jPasswordField_2.setForeground(Color.GRAY);  // Placeholder color
+        
         // center form
         this.setLocationRelativeTo(null);
         
         // Create a yellow border for the jpanel_title
         // 0 border in the top
-        Border jpanel_title_border = BorderFactory.createMatteBorder(0, 1, 1, 1, Color.yellow);
+        Border jpanel_title_border = BorderFactory.createMatteBorder(0, 1, 1, 1, Color.green);
         // set the border to the jpanel
         jPanel_title.setBorder(jpanel_title_border);
         
@@ -108,7 +114,7 @@ public class Register_Form extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 0));
+        jPanel1.setBackground(new java.awt.Color(51, 255, 153));
 
         jPanel2.setBackground(new java.awt.Color(153, 153, 153));
 
@@ -135,6 +141,16 @@ public class Register_Form extends javax.swing.JFrame {
         jLabel1.setText("Full Name:");
 
         jTextField_Fullname.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jTextField_Fullname.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField_FullnameActionPerformed(evt);
+            }
+        });
+        jTextField_Fullname.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField_FullnameKeyTyped(evt);
+            }
+        });
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel2.setText(" Username:");
@@ -182,12 +198,35 @@ public class Register_Form extends javax.swing.JFrame {
         jLabel_imgpath.setText("image path");
 
         jPasswordField_1.setText("jPasswordField1");
+        jPasswordField_1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jPasswordField_1FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jPasswordField_1FocusLost(evt);
+            }
+        });
+        jPasswordField_1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jPasswordField_1ActionPerformed(evt);
+            }
+        });
 
         jPasswordField_2.setText("jPasswordField1");
+        jPasswordField_2.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jPasswordField_2FocusGained(evt);
+            }
+        });
+        jPasswordField_2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jPasswordField_2ActionPerformed(evt);
+            }
+        });
 
         jLabel_login.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel_login.setForeground(new java.awt.Color(0, 153, 0));
-        jLabel_login.setText(">> Already Have an Account? Login!");
+        jLabel_login.setText("Login to Account !");
         jLabel_login.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel_login.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -206,53 +245,53 @@ public class Register_Form extends javax.swing.JFrame {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
-                            .addGap(37, 37, 37)
-                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
+                        .addGap(37, 37, 37)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(jPanel3Layout.createSequentialGroup()
+                                    .addComponent(jLabel5)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(jPasswordField_2, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel3Layout.createSequentialGroup()
-                                        .addComponent(jLabel5)
+                                        .addComponent(jLabel7)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jPasswordField_2, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(jPanel3Layout.createSequentialGroup()
-                                            .addComponent(jLabel7)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jRadioButton_Male)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                            .addComponent(jRadioButton_Female))
-                                        .addGroup(jPanel3Layout.createSequentialGroup()
-                                            .addComponent(jLabel6)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jTextField_Phone, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(jPanel3Layout.createSequentialGroup()
-                                            .addComponent(jLabel8)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jButton_SelectImage, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jLabel_imgpath, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addComponent(jButton_Register, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(jPanel3Layout.createSequentialGroup()
-                                    .addGap(68, 68, 68)
-                                    .addComponent(jLabel4)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jPasswordField_1, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(jPanel3Layout.createSequentialGroup()
-                                    .addGap(64, 64, 64)
-                                    .addComponent(jLabel1)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jTextField_Fullname, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGroup(jPanel3Layout.createSequentialGroup()
-                            .addGap(64, 64, 64)
-                            .addComponent(jLabel2)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jTextField_Username, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(jRadioButton_Male)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jRadioButton_Female))
+                                    .addGroup(jPanel3Layout.createSequentialGroup()
+                                        .addComponent(jLabel6)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jTextField_Phone, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel3Layout.createSequentialGroup()
+                                        .addComponent(jLabel8)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jButton_SelectImage, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel_imgpath, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(jButton_Register, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGap(68, 68, 68)
+                                .addComponent(jLabel4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jPasswordField_1, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGap(64, 64, 64)
+                                .addComponent(jLabel1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTextField_Fullname, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(142, 142, 142)
-                        .addComponent(jLabel_login)))
+                        .addGap(64, 64, 64)
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextField_Username, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(24, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel_login)
+                .addGap(188, 188, 188))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -285,13 +324,13 @@ public class Register_Form extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
-                    .addComponent(jLabel_imgpath)
-                    .addComponent(jButton_SelectImage))
+                    .addComponent(jButton_SelectImage)
+                    .addComponent(jLabel_imgpath))
                 .addGap(18, 18, 18)
                 .addComponent(jButton_Register, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel_login, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
         jLabel_minimize.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -587,6 +626,46 @@ public class Register_Form extends javax.swing.JFrame {
         jLabel_login.setBorder(labelcreate_account_border);
 
     }//GEN-LAST:event_jLabel_loginMouseExited
+
+    private void jPasswordField_1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jPasswordField_1FocusGained
+        
+        // Set the password field empty when program runs
+        String registerPassword = String.valueOf(jPasswordField_1.getPassword());
+        
+        if(registerPassword.trim().toLowerCase().equals("password")){
+            jPasswordField_1.setText("");
+            jPasswordField_1.setForeground(Color.black);
+        }
+        
+    }//GEN-LAST:event_jPasswordField_1FocusGained
+
+    private void jPasswordField_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField_2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPasswordField_2ActionPerformed
+
+    private void jPasswordField_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField_1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPasswordField_1ActionPerformed
+
+    private void jPasswordField_1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jPasswordField_1FocusLost
+
+    }//GEN-LAST:event_jPasswordField_1FocusLost
+
+    private void jPasswordField_2FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jPasswordField_2FocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPasswordField_2FocusGained
+
+    private void jTextField_FullnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_FullnameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField_FullnameActionPerformed
+
+    private void jTextField_FullnameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField_FullnameKeyTyped
+        
+        char ch = evt.getKeyChar();
+        if (Character.isDigit(ch) || (!Character.isLetter(ch) && ch != ' ')) {
+            evt.consume();  // Discard the invalid key input
+        }
+    }//GEN-LAST:event_jTextField_FullnameKeyTyped
     
     // create a function to verify the empty fields
     public boolean verifyFields(){
@@ -613,6 +692,16 @@ public class Register_Form extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Password doesn't match","Confirm password",2);
             return false;
         }
+        
+        else if (phone.length() != 10) {
+            JOptionPane.showMessageDialog(null, "Phone number format invalid. Must be 10 digits long.");
+            return false;
+        }
+        
+        else if (pass1.length() < 8 || pass1.length() > 12 || pass2.length() < 8 || pass2.length() > 12 ){
+            JOptionPane.showMessageDialog(null, "Password length invalid. Must be 8-12 characters long.");
+            return false;
+        }        
         
         else{
             return true;
